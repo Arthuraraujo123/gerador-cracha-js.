@@ -2,18 +2,81 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Projeto parte 2</title>
+    <title>Parte dois do projeto</title>
 </head>
 <body>
 
     <script>
        
-        const nome = prompt("Introduza o seu nome:");
-        const sobrenome = prompt("Introduza o seu sobrenome:");
-        const anoNascimento = prompt("Introduza o seu ano de nascimento:");
+function inicio() {
 
-       
-        const ativo = confirm("É aluno ativo da instituição?");
+    let equipamentos = ["Notebooks", "Monitores", "Teclados"];
+
+    let estoque = [
+        [5, 10],
+        [15, 10],
+        [20, 15]
+    ];
+
+    let opcao = 0;
+    let id;
+    let quantidade;
+
+    while (opcao != 3) {
+
+        console.log("1 - Emitir Relatório de Ativos");
+        console.log("2 - Registrar Recebimento de equipamento");
+        console.log("3 - Encerrar Sistema");
+
+        opcao = Number(prompt("Digite uma opção: "));
+
+        switch (opcao) {
+
+            case 1:
+                console.log("Relatório de Ativos");
+
+                for (let i = 0; i < 3; i++) {
+
+                    console.log("ID: " + i);
+                    console.log("Equipamento: " + equipamentos[i]);
+                    console.log("Quantidade atual: " + estoque[i][0]);
+                    console.log("Quantidade mínima: " + estoque[i][1]);
+
+                    if (estoque[i][0] < estoque[i][1]) {
+                        console.log("Estoque crítico! Necessário abrir chamado de compra.");
+                    }
+                }
+
+                break;
+
+            case 2:
+                id = Number(prompt("Digite o ID do equipamento: "));
+
+                if (id >= 0 && id <= 2) {
+
+                    quantidade = Number(prompt("Digite a quantidade recebida: "));
+
+                    estoque[id][0] = estoque[id][0] + quantidade;
+
+                    console.log("Recebimento registrado");
+
+                } else {
+                    console.log("ID inválido");
+                }
+
+                break;
+
+            case 3:
+                console.log("Sistema encerrado");
+                break;
+
+            default:
+                console.log("Opção inválida. Digite 1, 2 ou 3");
+        }
+    }
+}
+
+inicio();
     </script>
 </body>
 </html>
