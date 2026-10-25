@@ -14,6 +14,25 @@
 
         let alunoAtivo = confirm("É aluno ativo da instituição?");
         ////terminar o código confome pedido nas instruções do projeto
+
+       anoNascimento = Number(anoNascimento);
+       //Conversão de anoNascimento
+
+       let idade = 2026 - anoNascimento;
+       //Calculo para achar a idade
+
+       let sobrenomeCaixaalta  = sobrenome.toUpperCase();
+       //Fazer o sobrenome ficar caixa alta
+
+       let numerodeletras = nome.lenght;
+       //Contar letras existentes no nome 
+
+        console.log(`CRACHÁ VIRTUAL: ${sobrenomeCaixaalta}, ${nome}`);
+        console.log(`Idade estimada: ${idade} anos.`);
+        console.log(`O seu primeiro nome tem ${numerodeletras} letras.`);
+        console.log(`Estatuto de aluno ativo: ${AlunoAtivo}`);
+        //Exibir os resultados
+        
     </script>
 
 </body>
